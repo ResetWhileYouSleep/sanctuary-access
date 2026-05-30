@@ -1,0 +1,556 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quiet Chamber</title>
+
+<style>
+
+body{
+    margin:0;
+    background:#000;
+    color:#e7d8c6;
+    font-family:Georgia, serif;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
+}
+
+.wrap{
+    text-align:center;
+    opacity:0;
+    animation:fade 6s ease forwards;
+    padding:40px;
+}
+
+@keyframes fade{
+    from{
+        opacity:0;
+        transform:translateY(10px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.small{
+    font-size:11px;
+    letter-spacing:4px;
+    opacity:0.34;
+    margin-top:28px;
+}
+
+.return{
+    margin-top:40px;
+}
+
+.return a{
+    color:rgba(234,216,194,0.22);
+    text-decoration:none;
+    font-size:9px;
+    letter-spacing:4px;
+}
+
+.grain{
+    position:fixed;
+    inset:0;
+    opacity:0.03;
+    pointer-events:none;
+    background-image:
+    radial-gradient(circle, rgba(255,255,255,0.35) 1px, transparent 1px);
+    background-size:3px 3px;
+}
+
+
+
+/* ---------- RESPONSIVE LAYOUTS ---------- */
+
+@media (orientation: landscape) {
+
+    section img,
+    .wrap img{
+        object-fit: cover;
+        object-position: center center;
+        transform: scale(1.01);
+    }
+
+    .overlay{
+        background:
+        radial-gradient(circle at center,
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.30),
+            rgba(0,0,0,0.34)),
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.18),
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.18)
+        );
+    }
+
+    .portal{
+        bottom: 14px;
+    }
+
+    .portal a{
+        font-size: 10px;
+        letter-spacing: 3px;
+        padding: 8px 16px;
+    }
+
+    .return{
+        bottom: 12px;
+    }
+
+    .return a{
+        font-size: 9px;
+        padding: 7px 12px;
+    }
+}
+
+@media (min-width: 768px) {
+
+    section img,
+    .wrap img{
+        object-fit: cover;
+        object-position: center center;
+    }
+
+    .portal a{
+        font-size: 11px;
+        letter-spacing: 4px;
+        padding: 10px 18px;
+    }
+
+    .return a{
+        font-size: 10px;
+        letter-spacing: 4px;
+    }
+
+    .whisper{
+        font-size: 9px;
+        right: 22px;
+    }
+}
+
+@media (min-width: 1024px) {
+
+    body{
+        background:#000;
+    }
+
+    section{
+        max-width: 100vw;
+    }
+
+    section img,
+    .wrap img{
+        object-fit: cover;
+        object-position: center center;
+        filter:
+            brightness(0.975)
+            contrast(1.04)
+            saturate(0.98);
+    }
+
+    .fadeTop{
+        height: 180px;
+    }
+
+    .fadeBottom{
+        height: 220px;
+    }
+}
+
+
+
+/* ---------- TRUE CINEMATIC LANDSCAPE MODE ---------- */
+
+@media (orientation: landscape){
+
+    body{
+        background:#000;
+    }
+
+    section,
+    .wrap{
+        display:flex;
+        align-items:center;
+        justify-content:center;
+        background:#000;
+    }
+
+    section img,
+    .wrap img{
+
+        width:auto;
+        height:100vh;
+
+        max-width:100vw;
+        max-height:100vh;
+
+        object-fit:contain;
+        object-position:center center;
+
+        transform:scale(1);
+
+        filter:
+            brightness(0.955)
+            contrast(1.01)
+            saturate(0.96);
+
+    }
+
+    .overlay{
+
+        background:
+
+        linear-gradient(
+            to right,
+            rgba(0,0,0,0.34),
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.10),
+            rgba(0,0,0,0.34)
+        ),
+
+        linear-gradient(
+            to bottom,
+            rgba(0,0,0,0.18),
+            rgba(0,0,0,0.08),
+            rgba(0,0,0,0.34)
+        );
+
+    }
+
+    .fadeTop{
+        height:90px;
+    }
+
+    .fadeBottom{
+        height:120px;
+    }
+
+    .portal{
+        bottom:12px;
+    }
+
+    .portal a{
+        font-size:9px;
+        letter-spacing:4px;
+        padding:8px 14px;
+        color:rgba(234,216,194,0.34);
+    }
+
+    .return{
+        bottom:10px;
+    }
+
+    .return a{
+        font-size:8px;
+        letter-spacing:4px;
+        color:rgba(234,216,194,0.24);
+    }
+
+    .whisper{
+        font-size:7px;
+        letter-spacing:5px;
+        opacity:0.10;
+    }
+
+    .mist{
+        opacity:0.75;
+    }
+
+    .grain{
+        opacity:0.018;
+    }
+
+}
+
+/* ---------- TABLET CINEMATIC MODE ---------- */
+
+@media (min-width: 768px) and (orientation: portrait){
+
+    section img,
+    .wrap img{
+
+        object-fit:cover;
+        object-position:center center;
+
+        filter:
+            brightness(0.975)
+            contrast(1.04)
+            saturate(0.98);
+
+    }
+
+    .portal a{
+        font-size:10px;
+        letter-spacing:4px;
+    }
+
+    .return a{
+        font-size:9px;
+    }
+}
+
+/* ---------- LARGE DESKTOP ATMOSPHERE ---------- */
+
+@media (min-width: 1200px){
+
+    .mist{
+        opacity:0.55;
+    }
+
+    .grain{
+        opacity:0.015;
+    }
+
+    .overlay{
+        backdrop-filter:blur(0.5px);
+    }
+
+}
+
+
+
+/* ---------- SAFARI / MOBILE VIEWPORT FIXES ---------- */
+
+section,
+.wrap{
+
+    min-height:112svh !important;
+    min-height:112vh !important;
+
+    position:relative;
+    overflow:hidden;
+
+}
+
+/* First chamber breathing space */
+
+.scene1{
+    padding-bottom:10svh;
+    padding-bottom:10vh;
+}
+
+/* Cleaner transition pacing */
+
+section img,
+.wrap img{
+
+    min-height:112svh;
+    min-height:112vh;
+
+}
+
+/* Better logo/title visibility */
+
+.logo,
+.brand,
+.sanctuary-logo{
+
+    top:7svh !important;
+    top:7vh !important;
+
+}
+
+/* Safer chamber seam spacing */
+
+.portal{
+    bottom:5svh !important;
+    bottom:5vh !important;
+}
+
+/* Better scroll arrow visibility */
+
+.portal a{
+
+    padding-bottom:3svh;
+    padding-bottom:3vh;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    gap:10px;
+
+}
+
+/* Smooth cinematic chamber separation */
+
+section::after{
+
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    right:0;
+    bottom:-2px;
+
+    height:18svh;
+    height:18vh;
+
+    pointer-events:none;
+
+    background:
+    linear-gradient(
+        to bottom,
+        rgba(0,0,0,0),
+        rgba(0,0,0,0.06),
+        rgba(0,0,0,0.18)
+    );
+
+    z-index:2;
+
+}
+
+/* Portrait sacred pacing */
+
+@media (orientation: portrait){
+
+    section,
+    .wrap{
+        min-height:116svh !important;
+        min-height:116vh !important;
+    }
+
+}
+
+/* Landscape chamber rhythm */
+
+@media (orientation: landscape){
+
+    section,
+    .wrap{
+        min-height:108svh !important;
+        min-height:108vh !important;
+    }
+
+    .portal{
+        bottom:3svh !important;
+    }
+
+}
+
+
+</style>
+</head>
+
+<body data-audio="hidden">
+
+<div class="grain"></div>
+
+<div class="wrap">
+
+<div>
+Some spaces remain quiet<br>
+even after leaving them.
+</div>
+
+<div class="small">
+THE CHAMBER REMEMBERS
+</div>
+
+<div class="return">
+<a href="index.html#arrival">Return</a>
+</div>
+
+</div>
+
+
+
+
+
+<script>
+
+let ambient;
+
+function initializeAmbient(){
+
+    if(window.ambientInitialized) return;
+    window.ambientInitialized = true;
+
+    ambient = new Audio('ambient.mp3');
+    ambient.loop = true;
+
+    const savedTime = sessionStorage.getItem('ambientTime');
+    const savedStarted = sessionStorage.getItem('ambientStarted');
+
+    if(savedTime){
+        ambient.currentTime = parseFloat(savedTime);
+    }
+
+    function savePlayback(){
+        sessionStorage.setItem('ambientTime', ambient.currentTime);
+    }
+
+    setInterval(savePlayback, 1000);
+
+    function fadeTo(target, speed=0.0035){
+
+        let fade = setInterval(() => {
+
+            if(ambient.volume < target){
+                ambient.volume += speed;
+
+                if(ambient.volume >= target){
+                    ambient.volume = target;
+                    clearInterval(fade);
+                }
+
+            } else {
+                clearInterval(fade);
+            }
+
+        }, 450);
+    }
+
+    function beginAmbient(){
+
+        if(sessionStorage.getItem('ambientStarted') === 'true'){
+            ambient.volume = 0;
+        } else {
+            sessionStorage.setItem('ambientStarted', 'true');
+            ambient.volume = 0;
+        }
+
+        ambient.play().then(() => {
+
+            const mode = document.body.dataset.audio || 'main';
+
+            if(mode === 'main'){
+                fadeTo(0.15);
+            }
+
+            if(mode === 'threshold'){
+                fadeTo(0.09, 0.0025);
+            }
+
+            if(mode === 'hidden'){
+                fadeTo(0.04, 0.0015);
+            }
+
+        }).catch(() => {});
+
+    }
+
+    window.addEventListener('touchstart', beginAmbient, {once:true});
+    window.addEventListener('scroll', beginAmbient, {once:true});
+    window.addEventListener('click', beginAmbient, {once:true});
+
+}
+
+initializeAmbient();
+
+</script>
+
+</body>
+</html>

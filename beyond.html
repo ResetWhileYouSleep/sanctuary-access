@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Beyond The Threshold</title>
+
+<style>
+html,body{
+margin:0;
+padding:0;
+background:#000;
+overflow-x:hidden;
+}
+
+.wrapper{
+position:relative;
+max-width:720px;
+margin:auto;
+}
+
+.wrapper img{
+display:block;
+width:100%;
+height:auto;
+}
+
+/* Invisible hotspot over embedded  text */
+.hotspot{
+position:absolute;
+left:28%;
+bottom:6%;
+width:44%;
+height:7%;
+display:block;
+background:transparent;
+}
+</style>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+<img src="assets/beyond-threshold.jpg"
+alt="Beyond The Threshold">
+
+<a class="hotspot"
+href="hidden-chambers.html"
+aria-label="">
+</a>
+
+</div>
+
+
+<audio id="sanctuary-audio" autoplay loop>
+  <source src="assets/ambient.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const audio = document.getElementById('sanctuary-audio');
+  if(audio){
+    audio.volume = 0.45;
+
+    // try resume on user interaction for mobile safari
+    const resume = () => {
+      audio.play().catch(()=>{});
+      document.removeEventListener('touchstart', resume);
+      document.removeEventListener('click', resume);
+    };
+
+    document.addEventListener('touchstart', resume, {once:true});
+    document.addEventListener('click', resume, {once:true});
+  }
+});
+</script>
+
+</body>
+</html>
