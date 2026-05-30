@@ -1,0 +1,29 @@
+AMBIENT AUDIO SETUP
+
+Because copyrighted YouTube audio cannot be redistributed inside the ZIP,
+you must add your own ambient MP3 manually.
+
+RECOMMENDED AUDIO DIRECTION:
+'Night Flow' dark cinematic ambient atmosphere.
+
+HOW TO ADD:
+1. Download or create a loopable ambient MP3 you have rights to use.
+2. Rename it exactly:
+   ambient.mp3
+3. Place it beside:
+   index.html
+
+FINAL STRUCTURE:
+- index.html
+- beyond.html
+- hidden.html
+- ambient.mp3
+- assets/
+
+The sanctuary automatically:
+- waits for first interaction
+- fades audio in slowly
+- loops ambience softly
+- reduces intensity in Beyond The Threshold
+
+No aggressive autoplay is used.

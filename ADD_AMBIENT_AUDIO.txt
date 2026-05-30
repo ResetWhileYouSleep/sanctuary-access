@@ -1,0 +1,6 @@
+Place your existing sanctuary ambient audio file into:
+assets/ambient.mp3
+
+This rebuild reconnects ambient audio to:
+- beyond.html
+- hidden-chambers.html
