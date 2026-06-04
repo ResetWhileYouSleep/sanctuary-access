@@ -15,10 +15,10 @@ overflow-y:auto;
 }
 
 .portal{
-display:block;
+position:relative;
 width:100vw;
-min-height:100vh;
-background:#000;
+max-width:512px;
+margin:0 auto;
 }
 
 .portal img{
@@ -28,10 +28,12 @@ height:auto;
 }
 
 .existing-member{
-margin-top:0;
+position:absolute;
+left:50%;
+bottom:22px;
+transform:translateX(-50%);
 text-align:center;
 }
-
 .existing-member a{
 display:inline-block;
 padding:9px 24px;
