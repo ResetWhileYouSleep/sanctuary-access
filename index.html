@@ -966,6 +966,20 @@ margin:32px auto 0;
 text-align:center;
 }
 
+#thresholdFade{
+    position:fixed;
+    inset:0;
+    background:#000;
+    opacity:0;
+    pointer-events:none;
+    z-index:99999;
+    transition:opacity 0.8s ease;
+}
+
+#thresholdFade.active{
+    opacity:1;
+}
+    
 </style>
 </head>
 
@@ -1132,8 +1146,22 @@ onclick="closeExperienceGuide()">
 
 </div>
 
+<div id="thresholdFade"></div>
+    
 <script>
 
+function enterThreshold(e){
+    e.preventDefault();
+
+    document
+        .getElementById("thresholdFade")
+        .classList.add("active");
+
+    setTimeout(()=>{
+        window.location.href="beyond.html";
+    },800);
+}
+    
 function openCarryGuide(){
 document.getElementById('carryGuideModal').style.display='block';
 }
