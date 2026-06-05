@@ -908,52 +908,6 @@ text-align:center;
 z-index:30;
 }
 
-.carry-guide{
-
-margin-bottom:14px;
-
-background:rgba(0,0,0,.55);
-
-border:1px solid rgba(228,201,139,.20);
-
-border-radius:28px;
-
-overflow:hidden;
-
-backdrop-filter:blur(10px);
-
-}
-
-.carry-guide summary{
-
-padding:16px;
-
-cursor:pointer;
-
-list-style:none;
-
-color:#e4c98b;
-
-font-size:.95rem;
-
-letter-spacing:.05em;
-
-}
-
-.guide-content{
-
-padding:20px;
-
-line-height:1.9;
-
-font-size:.88rem;
-
-color:rgba(245,230,211,.88);
-
-text-align:left;
-
-}
-
 .threshold-btn{
 
 display:inline-block;
@@ -979,6 +933,40 @@ box-shadow:
 
 }
 
+.sanctuary-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.82);
+z-index:9999;
+overflow-y:auto;
+padding:40px 20px;
+}
+
+.sanctuary-modal-content{
+max-width:650px;
+margin:40px auto;
+padding:32px;
+background:rgba(8,8,8,.95);
+border:1px solid rgba(228,201,155,.28);
+border-radius:28px;
+color:#e4c99b;
+text-align:left;
+line-height:1.8;
+box-shadow:0 0 40px rgba(0,0,0,.5);
+}
+
+.sanctuary-modal-content h2{
+text-align:center;
+margin-bottom:24px;
+}
+
+.sanctuary-modal-content .threshold-btn{
+display:block;
+margin:32px auto 0;
+text-align:center;
+}
+
 </style>
 </head>
 
@@ -996,117 +984,25 @@ box-shadow:
 <section class="scene5"><img src="assets/scene5.PNG"><div class="overlay"></div></section>
 <section class="scene6"><img src="assets/scene6.PNG"><div class="overlay"></div></section>
 
-<section class="scene7">
-<img src="assets/scene7.PNG">
-<div class="overlay"></div>
-<div class="scene7-actions">
-<details class="carry-guide">
-<summary>
-✦ Carry The Sanctuary With You ✦
-</summary>
-<div class="guide-content">
+<button
+class="threshold-btn"
+onclick="openCarryGuide()">
 
 ✦ Carry The Sanctuary With You ✦
 
-<br><br>
-
-Many travelers choose to keep
-The Sanctuary close at hand.
+</button>
 
 <br><br>
 
-For the most immersive experience,
-you may place The Sanctuary upon
-your home screen.
+<button
+class="threshold-btn"
+onclick="openExperienceGuide()">
+
+✦ Experience The Sanctuary ✦
+
+</button>
 
 <br><br>
-
-📱 iPhone
-
-<br>
-
-• Open in Safari
-
-<br>
-
-• Tap Share
-
-<br>
-
-• Add to Home Screen
-
-<br><br>
-
-🤖 Android
-
-<br>
-
-• Open in Chrome
-
-<br>
-
-• Tap Install App
-
-<br><br>
-
-The Sanctuary will then open
-like a dedicated app.
-
-<hr style="margin:24px 0;border:none;border-top:1px solid rgba(228,201,139,.18);">
-
-✦ How To Experience The Sanctuary ✦
-
-<br><br>
-
-The Sanctuary is designed to accompany your Reset While You Sleep journey.
-
-<br><br>
-
-Rather than rushing through every scene at once, allow the Sanctuary to unfold gradually over time.
-
-<br><br>
-
-You may return whenever you wish:
-
-<br><br>
-
-• Begin with Return To Stillness when you need a quiet pause.
-
-<br><br>
-
-• Visit Ritual Fragments for gentle reflections and reminders.
-
-<br><br>
-
-• Explore Evening Atmosphere when preparing for rest.
-
-<br><br>
-
-• Step through The Threshold when you feel ready to continue your journey.
-
-<br><br>
-
-There is no correct pace.
-
-<br><br>
-
-Some travelers stay for only a moment.
-
-<br><br>
-
-Others return night after night.
-
-<br><br>
-
-The Sanctuary is meant to be experienced, not completed.
-
-<br><br>
-
-The path remains here, quietly waiting whenever you need it.
-
-</div>
-
-</details>
 
 <a
 class="threshold-btn"
@@ -1126,11 +1022,137 @@ href="beyond.html">
 <a href="hidden-chambers.html"></a>
 </div>
 
+<!-- Carry The Sanctuary With You -->
+
+<div id="carryGuideModal" class="sanctuary-modal">
+
+<div class="sanctuary-modal-content">
+
+<h2>✦ Carry The Sanctuary With You ✦</h2>
+
+<p>
+Many travelers choose to keep
+The Sanctuary close at hand.
+</p>
+
+<p>
+For the most immersive experience,
+you may place The Sanctuary upon your home screen.
+</p>
+
+<p><strong>iPhone</strong><br>
+• Open in Safari<br>
+• Tap Share<br>
+• Add to Home Screen
+</p>
+
+<p><strong>Android</strong><br>
+• Open in Chrome<br>
+• Tap Install App
+</p>
+
+<p>
+The Sanctuary will then open like a dedicated app.
+</p>
+
+<button
+class="threshold-btn"
+onclick="closeCarryGuide()">
+
+✦ Return To The Path ✦
+
+</button>
+
+</div>
+
+</div>
 
 
 
+<!-- How To Experience The Sanctuary -->
+
+<div id="experienceGuideModal" class="sanctuary-modal">
+
+<div class="sanctuary-modal-content">
+
+<h2>✦ Experience The Sanctuary ✦</h2>
+
+<p>
+The Sanctuary is designed to accompany your
+Reset While You Sleep journey.
+</p>
+
+<p>
+Rather than rushing through every scene at once,
+allow the Sanctuary to unfold gradually over time.
+</p>
+
+<p>
+You may return whenever you wish:
+</p>
+
+<p>
+• Return To Stillness when you need a quiet pause.
+</p>
+
+<p>
+• Visit Ritual Fragments for gentle reflections and reminders.
+</p>
+
+<p>
+• Explore Evening Atmosphere when preparing for rest.
+</p>
+
+<p>
+• Step through The Threshold when you feel ready to continue your journey.
+</p>
+
+<p>
+There is no correct pace.
+</p>
+
+<p>
+Some travelers stay for only a moment.
+Others return night after night.
+</p>
+
+<p>
+The Sanctuary is meant to be experienced, not completed.
+</p>
+
+<p>
+The path remains here, quietly waiting whenever you need it.
+</p>
+
+<button
+class="threshold-btn"
+onclick="closeExperienceGuide()">
+
+✦ Return To The Path ✦
+
+</button>
+
+</div>
+
+</div>
 
 <script>
+
+function openCarryGuide(){
+document.getElementById('carryGuideModal').style.display='block';
+}
+
+function closeCarryGuide(){
+document.getElementById('carryGuideModal').style.display='none';
+}
+
+function openExperienceGuide(){
+document.getElementById('experienceGuideModal').style.display='block';
+}
+
+function closeExperienceGuide(){
+document.getElementById('experienceGuideModal').style.display='none';
+}
 
 let ambient;
 
