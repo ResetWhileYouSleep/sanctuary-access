@@ -1022,7 +1022,82 @@ text-align:center;
 #thresholdFade.active{
     opacity:1;
 }
-    
+
+/* ---------- SANCTUARY SPLASH ---------- */
+
+#sanctuarySplash{
+
+    position:fixed;
+    inset:0;
+
+    background:#050505;
+
+    z-index:999999;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    text-align:center;
+
+    transition:opacity 1.4s ease;
+
+}
+
+#sanctuarySplash.hidden{
+
+    opacity:0;
+    pointer-events:none;
+
+}
+
+.splash-inner{
+
+    color:#e4c99b;
+
+    padding:20px;
+
+}
+
+.splash-title{
+
+    font-size:2rem;
+    letter-spacing:4px;
+
+    margin-bottom:18px;
+
+}
+
+.splash-tagline{
+
+    font-style:italic;
+    font-size:1.05rem;
+
+    opacity:.9;
+
+    margin-bottom:24px;
+
+}
+
+.splash-star{
+
+    font-size:1.3rem;
+    opacity:.8;
+
+}
+
+.splash-entering{
+
+    margin-top:20px;
+
+    letter-spacing:2px;
+
+    font-size:.85rem;
+
+    opacity:.65;
+
+}
+
 </style>
 
 <script data-goatcounter="https://thesanctuary.goatcounter.com/count"
@@ -1031,6 +1106,28 @@ text-align:center;
 </head>
 
 <body id="arrival" data-audio="main">
+
+<div id="sanctuarySplash">
+
+    <div class="splash-inner">
+
+        <div class="splash-title">
+            THE SANCTUARY
+        </div>
+
+        <div class="splash-tagline">
+            A place to remember who you are.
+        </div>
+
+        <div class="splash-star">✦</div>
+
+        <div class="splash-entering">
+            Entering...
+        </div>
+
+    </div>
+
+</div>
 
 <div class="fadeTop"></div>
 <div class="fadeBottom"></div>
@@ -1302,6 +1399,39 @@ function initializeAmbient(){
 
 }
 
+/* Sanctuary Splash */
+
+window.addEventListener("load", () => {
+
+    const splash =
+        document.getElementById("sanctuarySplash");
+
+    if(!splash) return;
+
+    if(sessionStorage.getItem("sanctuarySplashSeen")){
+
+        splash.remove();
+        return;
+
+    }
+
+    sessionStorage.setItem(
+        "sanctuarySplashSeen",
+        "true"
+    );
+
+    setTimeout(() => {
+
+        splash.classList.add("hidden");
+
+        setTimeout(() => {
+            splash.remove();
+        }, 1400);
+
+    }, 1800);
+
+});
+  
 initializeAmbient();
 
 </script>
