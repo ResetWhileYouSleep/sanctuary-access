@@ -1159,11 +1159,11 @@ onclick="openExperienceGuide()">
 
 <br><br>
 
-<a
+<button
 class="threshold-btn"
-href="beyond.html">
-✦ Step Beyond The Threshold ✦
-</a>
+onclick="openTravelerLibrary()">
+✦ Traveler's Library ✦
+</button>
 
 </div>
 
@@ -1289,6 +1289,67 @@ onclick="closeExperienceGuide()">
 
 </div>
 
+<!-- Traveler's Library -->
+
+<div id="travelerLibraryModal" class="sanctuary-modal">
+
+<div class="sanctuary-modal-content">
+
+<h2>✦ Traveler's Library ✦</h2>
+
+<p>
+Different journeys await beyond the Sanctuary.
+</p>
+
+<p>
+The Sanctuary remains here whenever you wish to return.
+</p>
+
+<p>
+Some travelers choose to continue exploring through
+private reflection journeys known as Hidden Chambers.
+</p>
+
+<p>
+Each chamber contains its own atmosphere,
+stories, reflections, and discoveries.
+</p>
+
+<p>
+The Traveler's Library will continue to grow
+as new journeys are added.
+</p>
+
+<p>
+✦ Whispering Hall<br>
+Available
+</p>
+
+<p>
+Additional chambers will appear over time.
+</p>
+
+<a
+class="threshold-btn"
+href="#">
+
+✦ Visit Traveler's Library ✦
+
+</a>
+
+<button
+class="threshold-btn"
+onclick="closeTravelerLibrary()"
+style="margin-top:18px;">
+
+✦ Return To The Path ✦
+
+</button>
+
+</div>
+
+</div>
+  
 <div id="thresholdFade"></div>
     
 <script>
@@ -1321,6 +1382,14 @@ function closeExperienceGuide(){
 document.getElementById('experienceGuideModal').style.display='none';
 }
 
+function openTravelerLibrary(){
+document.getElementById('travelerLibraryModal').style.display='block';
+}
+
+function closeTravelerLibrary(){
+document.getElementById('travelerLibraryModal').style.display='none';
+}
+  
 let ambient;
 
 function initializeAmbient(){
