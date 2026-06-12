@@ -21,15 +21,20 @@ body{
 }
     
 .hero{
-    height:50vh;
-    background:url('assets/library.PNG') center/cover no-repeat;
     position:relative;
 }
 
+.hero img{
+    display:block;
+    width:100%;
+    height:auto;
+}
+    
 .overlay{
 position:absolute;
 inset:0;
 background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.35),rgba(0,0,0,.75));
+pointer-events:none;
 }
 
 .library-content{
@@ -102,6 +107,7 @@ line-height:1.8;
 </head>
 <body>
 <section class="hero">
+    <img src="assets/library.PNG" alt="Traveler's Library">
     <div class="overlay"></div>
 </section>
 
