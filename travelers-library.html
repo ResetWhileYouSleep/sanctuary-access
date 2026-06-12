@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Traveler's Library</title>
+<style>
+body{
+margin:0;
+background:#000;
+color:#e4c99b;
+font-family:Georgia,serif;
+}
+
+.hero{
+min-height:100vh;
+background:url('assets/library.PNG') center/cover no-repeat;
+position:relative;
+}
+
+.overlay{
+position:absolute;
+inset:0;
+background:linear-gradient(to bottom,rgba(0,0,0,.55),rgba(0,0,0,.35),rgba(0,0,0,.75));
+}
+
+.library-content{
+position:relative;
+z-index:2;
+max-width:720px;
+margin:0 auto;
+padding:0;
+}
+
+.library-buttons{
+padding:5px 0 120px;
+background:#000;
+}
+
+.threshold-btn{
+display:block;
+width:min(90%,420px);
+margin:18px auto;
+padding:16px 28px;
+border-radius:999px;
+text-decoration:none;
+background:rgba(0,0,0,.70);
+border:1px solid rgba(228,201,139,.35);
+color:#e4c99b;
+font-size:1rem;
+box-sizing:border-box;
+text-align:center;
+cursor:pointer;
+}
+
+.sanctuary-modal{
+display:none;
+position:fixed;
+inset:0;
+background:rgba(0,0,0,.88);
+z-index:9999;
+overflow-y:auto;
+padding:40px 20px;
+}
+
+.sanctuary-modal-content{
+max-width:650px;
+margin:40px auto;
+padding:32px;
+background:rgba(8,8,8,.96);
+border:1px solid rgba(228,201,155,.28);
+border-radius:28px;
+line-height:1.8;
+}
+</style>
+</head>
+<body>
+<section class="hero">
+    <div class="overlay"></div>
+</section>
+
+<div class="library-buttons">
+
+<button class="threshold-btn" onclick="openJourneysModal()">✦ Reflection Journeys ✦</button>
+
+<button class="threshold-btn" onclick="openBooksModal()">✦ Books For Travelers ✦</button>
+
+<button class="threshold-btn" onclick="openToolsModal()">✦ Tools For Stillness ✦</button>
+
+<button class="threshold-btn" onclick="openSpacesModal()">✦ Quiet Spaces ✦</button>
+
+<button class="threshold-btn" onclick="openEssentialsModal()">✦ Traveler's Essentials ✦</button>
+
+<button class="threshold-btn" onclick="window.location.href='index.html'">✦ Return To The Sanctuary ✦</button>
+
+</div>
+
+<div id="journeysModal" class="sanctuary-modal">
+<div class="sanctuary-modal-content">
+<h2>✦ Reflection Journeys ✦</h2>
+
+<p><strong>Hidden Chambers</strong></p>
+
+<p>✦ Whispering Hall<br>Available</p>
+
+<p>✦ The Archive<br>Dormant</p>
+
+<p>✦ Ember Doors<br>Dormant</p>
+
+<p>✦ Hollow Lanterns<br>Dormant</p>
+
+<p>The Reflection Journeys are available through the Traveler's Library Store.</p>
+
+<a class="threshold-btn" href="#">✦ Visit Traveler's Library Store ✦</a>
+
+<button class="threshold-btn" onclick="closeJourneysModal()">✦ Return To Library ✦</button>
+
+</div>
+</div>
+
+<script>
+function openJourneysModal(){
+document.getElementById('journeysModal').style.display='block';
+}
+
+function closeJourneysModal(){
+document.getElementById('journeysModal').style.display='none';
+}
+</script>
+
+<div id="booksModal" class="sanctuary-modal"><div class="sanctuary-modal-content"><h2>✦ Books For Travelers ✦</h2><p>A curated shelf of books that travelers may find meaningful along the path.</p><p>This collection will grow over time.</p><a class="threshold-btn" href="#">✦ Visit Library Shelf ✦</a><button class="threshold-btn" onclick="closeBooksModal()">✦ Return To Library ✦</button></div></div>
+
+<div id="toolsModal" class="sanctuary-modal"><div class="sanctuary-modal-content"><h2>✦ Tools For Stillness ✦</h2><p>Quiet tools and resources selected for moments of reflection, presence, and stillness.</p><p>Additional resources will appear over time.</p><a class="threshold-btn" href="#">✦ Explore Tools ✦</a><button class="threshold-btn" onclick="closeToolsModal()">✦ Return To Library ✦</button></div></div>
+
+<div id="spacesModal" class="sanctuary-modal"><div class="sanctuary-modal-content"><h2>✦ Quiet Spaces ✦</h2><p>Places, environments, and experiences that support rest, reflection, and quiet attention.</p><p>Additional spaces will appear over time.</p><a class="threshold-btn" href="#">✦ Explore Quiet Spaces ✦</a><button class="threshold-btn" onclick="closeSpacesModal()">✦ Return To Library ✦</button></div></div>
+
+<div id="essentialsModal" class="sanctuary-modal"><div class="sanctuary-modal-content"><h2>✦ Traveler's Essentials ✦</h2><p>Carefully selected companions for different journeys.</p><p>Additional recommendations will appear over time.</p><a class="threshold-btn" href="#">✦ Explore Essentials ✦</a><button class="threshold-btn" onclick="closeEssentialsModal()">✦ Return To Library ✦</button></div></div>
+
+<script>
+function openBooksModal(){document.getElementById('booksModal').style.display='block';}
+function closeBooksModal(){document.getElementById('booksModal').style.display='none';}
+function openToolsModal(){document.getElementById('toolsModal').style.display='block';}
+function closeToolsModal(){document.getElementById('toolsModal').style.display='none';}
+function openSpacesModal(){document.getElementById('spacesModal').style.display='block';}
+function closeSpacesModal(){document.getElementById('spacesModal').style.display='none';}
+function openEssentialsModal(){document.getElementById('essentialsModal').style.display='block';}
+function closeEssentialsModal(){document.getElementById('essentialsModal').style.display='none';}
+</script>
+
+</body>
+</html>
